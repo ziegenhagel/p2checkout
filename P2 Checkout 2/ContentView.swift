@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WebKit
+import AVFoundation
 
 struct ContentView: View {
     
@@ -15,7 +16,6 @@ struct ContentView: View {
     @State private var scannedCode = ""
     
     @State private var responseText = ""
-    @State private var safariKey = UUID()
     
     
     var body: some View {
@@ -24,20 +24,15 @@ struct ContentView: View {
             
             WebView(urlString: "https://p2.faktorxmensch.com/\(scannedCode)")
             
-            Button("QR-Code scannen") {
+            AnimatedButton(title: "QR-Code scannen") {
+                //turnOnTorch()
                 isScannerPresented.toggle()
             }
-            .padding(.horizontal, 25.0)
-            .padding(.vertical,15)
-            .background(.blue)
-            .foregroundColor(.white)
-            .cornerRadius(/*@START_MENU_TOKEN@*/63.0/*@END_MENU_TOKEN@*/)
-            .sheet(isPresented: $isScannerPresented) {
+            .sheet(isPresented: $isScannerPresented, onDismiss: {
+                // turnOffTorch()
+            }) {
                 QRCodeScannerView { code in
                     scannedCode = code
-                    
-                    safariKey = UUID()  // This forces a refresh of the SafariView
-                    
                     isSafariPresented = true
                     isScannerPresented = false
                 }
@@ -45,25 +40,25 @@ struct ContentView: View {
             
             
             /*
-            VStack {
-                Button("Send POST Request") {
-                    // Beispiel-URL und -Body
-                    let url = URL(string: "https://example.com/post-endpoint")!
-                    let body: [String: Any] = ["key": "value"]
-                    
-                    performPostRequest(url: url, body: body) { result in
-                        switch result {
-                        case .success(let response):
-                            responseText = response
-                        case .failure(let error):
-                            responseText = "Error: \(error.localizedDescription)"
-                        }
-                    }
-                }
-                
-                Text(responseText)
-            }
-            */
+             VStack {
+             Button("Send POST Request") {
+             // Beispiel-URL und -Body
+             let url = URL(string: "https://example.com/post-endpoint")!
+             let body: [String: Any] = ["key": "value"]
+             
+             performPostRequest(url: url, body: body) { result in
+             switch result {
+             case .success(let response):
+             responseText = response
+             case .failure(let error):
+             responseText = "Error: \(error.localizedDescription)"
+             }
+             }
+             }
+             
+             Text(responseText)
+             }
+             */
             
         }
     }
@@ -94,3 +89,39 @@ func performPostRequest(url: URL, body: [String: Any], completion: @escaping (Re
         }
     }.resume()
 }
+
+/*
+func turnOnTorch() {
+    guard let device = AVCaptureDevice.default(for: .video) else { return
+        print("Torch is not available on this device.")
+    }
+    if device.hasTorch {
+        do {
+            try device.lockForConfiguration()
+            device.torchMode = .on
+            try device.setTorchModeOn(level: 1) // Niedrigste Stufe .1
+            device.unlockForConfiguration()
+        } catch {
+            print("Torch could not be used")
+        }
+    } else {
+        print("Torch is not available")
+    }
+}
+
+func turnOffTorch() {
+    guard let device = AVCaptureDevice.default(for: .video) else { return
+        print("Torch is not available on this device.")
+    }
+    if device.hasTorch {
+        do {
+            try device.lockForConfiguration()
+            device.torchMode = .off
+            device.unlockForConfiguration()
+        } catch {
+            print("Torch could not be used")
+        }
+    }
+}
+
+**/

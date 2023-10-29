@@ -17,6 +17,7 @@
 		F619A01B2AEE7313003D87B2 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A01A2AEE7313003D87B2 /* QRScannerController.swift */; };
 		F619A01D2AEE740D003D87B2 /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A01C2AEE740D003D87B2 /* QRCodeScannerView.swift */; };
 		F619A01F2AEE743F003D87B2 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A01E2AEE743F003D87B2 /* SafariView.swift */; };
+		F619A0212AEE8FF8003D87B2 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A0202AEE8FF8003D87B2 /* AnimatedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		F619A01A2AEE7313003D87B2 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		F619A01C2AEE740D003D87B2 /* QRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
 		F619A01E2AEE743F003D87B2 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		F619A0202AEE8FF8003D87B2 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
+		F619A0222AEE9082003D87B2 /* P2-Checkout-2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "P2-Checkout-2-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +103,10 @@
 		F6199FEF2AEE6CF5003D87B2 /* P2 Checkout 2 */ = {
 			isa = PBXGroup;
 			children = (
+				F619A0222AEE9082003D87B2 /* P2-Checkout-2-Info.plist */,
 				F6199FF02AEE6CF5003D87B2 /* P2_Checkout_2App.swift */,
 				F6199FF22AEE6CF5003D87B2 /* ContentView.swift */,
+				F619A0202AEE8FF8003D87B2 /* AnimatedButton.swift */,
 				F6199FF42AEE6CF6003D87B2 /* Assets.xcassets */,
 				F6199FF62AEE6CF6003D87B2 /* Preview Content */,
 				F619A01A2AEE7313003D87B2 /* QRScannerController.swift */,
@@ -270,6 +275,7 @@
 				F619A01D2AEE740D003D87B2 /* QRCodeScannerView.swift in Sources */,
 				F6199FF12AEE6CF5003D87B2 /* P2_Checkout_2App.swift in Sources */,
 				F619A01B2AEE7313003D87B2 /* QRScannerController.swift in Sources */,
+				F619A0212AEE8FF8003D87B2 /* AnimatedButton.swift in Sources */,
 				F619A01F2AEE743F003D87B2 /* SafariView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +443,8 @@
 				DEVELOPMENT_TEAM = SU4359U67H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "P2-Checkout-2-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "QR Codes scannen, Fotos von Equipment machen";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,6 +478,8 @@
 				DEVELOPMENT_TEAM = SU4359U67H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "P2-Checkout-2-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "QR Codes scannen, Fotos von Equipment machen";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
