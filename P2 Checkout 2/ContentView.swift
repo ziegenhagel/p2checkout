@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct ContentView: View {
     
@@ -20,9 +21,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             // Ständig angezeigte SafariView von example.com
-            SafariView(url: URL(string:"https://example.com/?code=\(scannedCode)")!)
-                .frame(height: 300) // Sie können die Höhe nach Bedarf anpassen
-                .id(safariKey)
+            
+            WebView(urlString: "https://example.com/?code=\(scannedCode)")
             
             
             Button("QR-Code scannen") {
@@ -39,8 +39,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $isSafariPresented) {
-                SafariView(url: URL(string: "https://example.com/?code=\(scannedCode)")!)
-                    .frame( height: 400)
+                WebView(urlString: "https://example.com/?code=\(scannedCode)")
             }
             
             
