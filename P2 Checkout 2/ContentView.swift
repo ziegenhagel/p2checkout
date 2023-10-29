@@ -32,14 +32,16 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: action.icon)
                                 .font(.title2)  // Increase the font size here, for example .title2, .title3, etc.
-                                .padding(.trailing, 10)  // Increase the gap by adjusting the trailing padding value
-                            
+                                .frame(minWidth: 30)  // Adjust this value to increase the gap
                             Text(action.rawValue.capitalized)
                         }.tag(action)
                     }
                 }
                 .pickerStyle(.menu)
                 .padding(.horizontal, 15)
+                .onChange(of: action) { _ in  // This will detect any change in the action
+                    scannedCode = ""
+                }
             }
             
             WebView(urlString: "http://192.168.178.92:3000/checkout\(scannedCode.isEmpty ? "" : "/\(action.rawValue)/\(scannedCode)")")
@@ -47,7 +49,7 @@ struct ContentView: View {
             HStack{
                 
                 Button(action: {
-                    scannedCode = " "
+                    scannedCode = ""
                 }) {
                     Image(systemName: "list.dash")
                         .resizable()
