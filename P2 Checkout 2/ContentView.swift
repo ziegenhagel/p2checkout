@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @State private var isScannerPresented = false
     @State private var isSafariPresented = false
-    @State private var scannedCode = "no"
+    @State private var scannedCode = ""
     
     @State private var responseText = ""
     @State private var safariKey = UUID()
@@ -22,7 +22,7 @@ struct ContentView: View {
         VStack {
             // Ständig angezeigte SafariView von example.com
             
-            WebView(urlString: "https://example.com/?code=\(scannedCode)")
+            WebView(urlString: "https://p2.faktorxmensch.com/\(scannedCode)")
             
             
             Button("QR-Code scannen") {
@@ -38,9 +38,9 @@ struct ContentView: View {
                     isScannerPresented = false
                 }
             }
-            .sheet(isPresented: $isSafariPresented) {
-                WebView(urlString: "https://example.com/?code=\(scannedCode)")
-            }
+            //.sheet(isPresented: $isSafariPresented) {
+                //WebView(urlString: "https://example.com/?code=\(scannedCode)")
+            //}
             
             
             VStack {
