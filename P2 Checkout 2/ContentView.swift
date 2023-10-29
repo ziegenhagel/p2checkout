@@ -22,22 +22,33 @@ struct ContentView: View {
         VStack {
             // Ständig angezeigte SafariView von example.com
             
-            WebView(urlString: "https://p2.faktorxmensch.com/\(scannedCode)")
+            WebView(urlString: "http://192.168.178.92:3000/checkout/\(scannedCode)")
             
-            AnimatedButton(title: "QR-Code scannen") {
-                //turnOnTorch()
-                isScannerPresented.toggle()
-            }
-            .sheet(isPresented: $isScannerPresented, onDismiss: {
-                // turnOffTorch()
-            }) {
-                QRCodeScannerView { code in
-                    scannedCode = code
-                    isSafariPresented = true
-                    isScannerPresented = false
+            HStack{
+                
+                Button(action: {
+                       scannedCode = " "
+                   }) {
+                       Image(systemName: "list.dash")
+                           .resizable()
+                           .frame(width: 24, height: 24)
+                           .padding(.trailing, 10)
+                   }
+
+                AnimatedButton(title: "QR-Code scannen") {
+                    //turnOnTorch()
+                    isScannerPresented.toggle()
+                }
+                .sheet(isPresented: $isScannerPresented, onDismiss: {
+                    // turnOffTorch()
+                }) {
+                    QRCodeScannerView { code in
+                        scannedCode = code
+                        isSafariPresented = true
+                        isScannerPresented = false
+                    }
                 }
             }
-            
             
             /*
              VStack {
