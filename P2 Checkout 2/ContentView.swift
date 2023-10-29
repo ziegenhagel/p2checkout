@@ -17,8 +17,8 @@ struct ContentView: View {
         var icon: String {
             switch self {
             case .info: return "info.circle.fill"
-            case .borrow: return "arrow.down.circle.fill"
-            case .returnItem: return "arrow.up.circle.fill"
+            case .borrow: return "arrow.right.circle.fill"
+            case .returnItem: return "arrow.left.circle.fill"
             }
         }
     }
@@ -38,8 +38,8 @@ struct ContentView: View {
                     }
                 }
                 .pickerStyle(.menu)
-                .padding(.horizontal, 15)
-                .onChange(of: action) { _ in  // This will detect any change in the action
+                .padding(.horizontal, 10)
+                .onChange(of: action) {
                     scannedCode = ""
                 }
             }
@@ -53,8 +53,8 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "list.dash")
                         .resizable()
-                        .frame(width: 24, height: 24)
-                        .padding(.trailing, 10)
+                        .frame(width: 16, height: 16)
+                        .padding(.trailing, 15)
                 }
                 
                 AnimatedButton(title: "QR-Code scannen") {

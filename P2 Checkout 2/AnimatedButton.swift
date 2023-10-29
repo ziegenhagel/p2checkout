@@ -16,14 +16,14 @@ struct AnimatedButton: View {
     var body: some View {
         ZStack {
             Color(isPressed ? .gray : .blue)
+                .opacity(0.1)
             Text(title)
-                .foregroundColor(.white)
+                .foregroundColor(.blue)
                 .font(.headline)
         }
-        .cornerRadius(63.0)
+        .cornerRadius(25.0)
         .frame(width: 250, height: 50)
         .scaleEffect(isPressed ? 0.9 : 1)
-        .padding()
         .gesture(TapGesture()
             .updating($isPressed) { (value, state, transaction) in
                 state = true
