@@ -24,10 +24,14 @@ struct ContentView: View {
             
             WebView(urlString: "https://p2.faktorxmensch.com/\(scannedCode)")
             
-            
             Button("QR-Code scannen") {
                 isScannerPresented.toggle()
             }
+            .padding(.horizontal, 25.0)
+            .padding(.vertical,15)
+            .background(.blue)
+            .foregroundColor(.white)
+            .cornerRadius(/*@START_MENU_TOKEN@*/63.0/*@END_MENU_TOKEN@*/)
             .sheet(isPresented: $isScannerPresented) {
                 QRCodeScannerView { code in
                     scannedCode = code
@@ -38,11 +42,9 @@ struct ContentView: View {
                     isScannerPresented = false
                 }
             }
-            //.sheet(isPresented: $isSafariPresented) {
-                //WebView(urlString: "https://example.com/?code=\(scannedCode)")
-            //}
             
             
+            /*
             VStack {
                 Button("Send POST Request") {
                     // Beispiel-URL und -Body
@@ -61,15 +63,9 @@ struct ContentView: View {
                 
                 Text(responseText)
             }
+            */
             
-            
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hels 23, world!")
-            Text(scannedCode)
         }
-        .padding()
     }
 }
 
