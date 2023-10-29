@@ -14,6 +14,9 @@
 		F619A0022AEE6CF6003D87B2 /* P2_Checkout_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A0012AEE6CF6003D87B2 /* P2_Checkout_2Tests.swift */; };
 		F619A00C2AEE6CF6003D87B2 /* P2_Checkout_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A00B2AEE6CF6003D87B2 /* P2_Checkout_2UITests.swift */; };
 		F619A00E2AEE6CF6003D87B2 /* P2_Checkout_2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A00D2AEE6CF6003D87B2 /* P2_Checkout_2UITestsLaunchTests.swift */; };
+		F619A01B2AEE7313003D87B2 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A01A2AEE7313003D87B2 /* QRScannerController.swift */; };
+		F619A01D2AEE740D003D87B2 /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A01C2AEE740D003D87B2 /* QRCodeScannerView.swift */; };
+		F619A01F2AEE743F003D87B2 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F619A01E2AEE743F003D87B2 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		F619A0072AEE6CF6003D87B2 /* P2 Checkout 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P2 Checkout 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F619A00B2AEE6CF6003D87B2 /* P2_Checkout_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2_Checkout_2UITests.swift; sourceTree = "<group>"; };
 		F619A00D2AEE6CF6003D87B2 /* P2_Checkout_2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2_Checkout_2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F619A01A2AEE7313003D87B2 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		F619A01C2AEE740D003D87B2 /* QRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
+		F619A01E2AEE743F003D87B2 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				F6199FF22AEE6CF5003D87B2 /* ContentView.swift */,
 				F6199FF42AEE6CF6003D87B2 /* Assets.xcassets */,
 				F6199FF62AEE6CF6003D87B2 /* Preview Content */,
+				F619A01A2AEE7313003D87B2 /* QRScannerController.swift */,
+				F619A01C2AEE740D003D87B2 /* QRCodeScannerView.swift */,
+				F619A01E2AEE743F003D87B2 /* SafariView.swift */,
 			);
 			path = "P2 Checkout 2";
 			sourceTree = "<group>";
@@ -258,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6199FF32AEE6CF5003D87B2 /* ContentView.swift in Sources */,
+				F619A01D2AEE740D003D87B2 /* QRCodeScannerView.swift in Sources */,
 				F6199FF12AEE6CF5003D87B2 /* P2_Checkout_2App.swift in Sources */,
+				F619A01B2AEE7313003D87B2 /* QRScannerController.swift in Sources */,
+				F619A01F2AEE743F003D87B2 /* SafariView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +434,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"P2 Checkout 2/Preview Content\"";
+				DEVELOPMENT_TEAM = SU4359U67H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR Codes scannen, Fotos von Equipment machen";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,9 +450,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fxm.P2-Checkout-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -450,8 +467,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"P2 Checkout 2/Preview Content\"";
+				DEVELOPMENT_TEAM = SU4359U67H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR Codes scannen, Fotos von Equipment machen";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,9 +483,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fxm.P2-Checkout-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
